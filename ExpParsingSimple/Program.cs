@@ -31,13 +31,16 @@ namespace ExpParsingSimple
 
                 var items = listProduct[0].Descendants("article")
                     .Where(e => e.GetAttributeValue("class", "")
-                        .Contains("_1h6Kf")).ToList();
-                foreach (var item in items)
-                {
-                    //Console.WriteLine(item);
-                    Console.WriteLine(item.InnerHtml);
-                }
-                Console.WriteLine();
+                    .Contains("_1h6Kf")).ToArray()
+                    .Select(b => b.InnerText); // Remove last Select to use in foreach.
+
+                //foreach (var item in enumerable)
+                //{
+                //    Console.WriteLine(item);
+                //    Console.WriteLine(item.InnerHtml);
+                //}
+
+                Console.WriteLine($"{string.Join("\n", items)}");
             }
         }
     }
