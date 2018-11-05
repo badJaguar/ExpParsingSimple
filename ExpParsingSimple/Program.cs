@@ -34,12 +34,6 @@ namespace ExpParsingSimple
                     .Contains("_1h6Kf")).ToArray()
                     .Select(b => b.InnerText); // Remove last Select to use in foreach.
 
-                //foreach (var item in enumerable)
-                //{
-                //    Console.WriteLine(item);
-                //    Console.WriteLine(item.InnerHtml);
-                //}
-
                 Console.WriteLine($"{string.Join("\n", items)}");
             }
         }
